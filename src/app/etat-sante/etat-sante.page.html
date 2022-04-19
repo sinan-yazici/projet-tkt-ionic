@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Etat de santé</ion-title>
+    <div class="bt-retour" slot="end">
+      <ion-back-button text="" defaultHref="afficher-animaux"></ion-back-button>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-input name="note" class="space-logo-placeholder" placeholder="Note" type="text" [(ngModel)]="form.note"><ion-icon name="create-outline"></ion-icon></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input name="date" class="space-logo-placeholder" placeholder="date" type="datetime" [(ngModel)]="form.date"><ion-icon name="calendar-outline"></ion-icon></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-textarea name="observation" class="space-logo-placeholder" placeholder="observation" type="textarea" [(ngModel)]="form.observation"><ion-icon name="chatbox-outline"></ion-icon></ion-textarea>
+  </ion-item>
+  <!-- <ion-item>
+    <ion-input class="space-logo-placeholder" type="number" [(ngModel)]="sante.id_animal"><ion-icon name="chatbox-outline"></ion-icon>{{ id }}</ion-input>
+  </ion-item> -->
+  <ion-button fill="outline" shape="round" expand="block" (click)="AddSante()">Valider</ion-button>
+</ion-content>

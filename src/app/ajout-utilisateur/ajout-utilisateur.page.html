@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar><ion-buttons slot="start">
+    <ion-menu-button menu="main-menu"></ion-menu-button>
+  </ion-buttons>
+    <ion-title>
+      Ajouter un utilisateur
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-input class="space-logo-placeholder" placeholder="identifiant" type="text" [(ngModel)]="user.login"><ion-icon name="person-outline"></ion-icon></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input class="space-logo-placeholder" placeholder="Mot de passe" type="password" [(ngModel)]="user.password"><ion-icon name="key-outline"></ion-icon></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input class="space-logo-placeholder" placeholder="Nom" type="text" [(ngModel)]="user.nom"><ion-icon name="walk-outline"></ion-icon></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input class="space-logo-placeholder" placeholder="Prenom" type="text" [(ngModel)]="user.prenom"><ion-icon name="walk-outline"></ion-icon></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input class="space-logo-placeholder" placeholder="Rôle" type="number" [(ngModel)]="user.id_role"><ion-icon name="ribbon-outline"></ion-icon></ion-input>
+    </ion-item>
+    <ion-button fill="outline" shape="round" expand="block" (click)="submit()"><ion-icon name="person-add-outline"></ion-icon></ion-button>
+  </ion-list>
+</ion-content>

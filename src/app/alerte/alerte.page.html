@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    <div class="left-right-alerte">
+    <ion-title >Les alertes</ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+
+
+
+  <ion-card *ngFor="let alerte  of alertes" class="Card-alerte">
+    <ion-card-header>
+      <ion-card-subtitle class="nom-user-alerte">{{ alerte.nom }} {{alerte.prenom}} </ion-card-subtitle>
+      <div class="trait-alerte"></div>
+      <ion-card-title>{{ alerte.libelle }} </ion-card-title>
+      <img class="image-card-alerte" src="../../assets/icon/logo2.svg">
+    </ion-card-header>
+    <ion-card-content><p>{{ alerte.description }} </p>
+      <p>Localisation : {{ alerte.localisation }}</p> </ion-card-content>
+    <div class="global-btn-alerte">
+    <div class="Gravite-alerte">
+    <p *ngIf=" alerte.gravite == '1'" ><ion-icon size="large" color="success"name="radio-button-on-outline"></ion-icon></p>
+      <p *ngIf=" alerte.gravite == '2'" ><ion-icon size="large" color="warning"name="radio-button-on-outline"></ion-icon></p>
+      <p *ngIf=" alerte.gravite == '3'" ><ion-icon size="large" color="danger"name="radio-button-on-outline"></ion-icon></p>
+      <p *ngIf=" alerte.gravite == '4'" ><ion-icon size="large" color="danger" name="alert-circle-outline"></ion-icon><ion-icon size="large" color="danger"name="radio-button-on-outline"></ion-icon></p>
+    </div>
+    <div class="modifier-suppr-alerte">
+      <ion-icon (click)="supprimerAlerte(alerte.id, alerte.libelle)" class="border" name="trash-outline"></ion-icon>
+      <ion-icon (click)="ModifierAlerte(alerte)" class="border" name="pencil-outline"></ion-icon>
+    </div>
+  </div>
+  </ion-card>
+
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button color="warning">
+      <ion-icon (click)="ajouterAlerte()"  name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+<script>
+</script>

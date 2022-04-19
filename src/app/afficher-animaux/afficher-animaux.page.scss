@@ -1,0 +1,30 @@
+ion-title{
+    background-color: #6F392D;
+    font-weight: 400;
+    font-size: 20px;
+    color: white;
+}
+ion-card-subtitle{
+    color: black;
+    text-align: center;
+    font-weight: 400;
+    font-size: large;
+}
+ion-card-content p{
+    color: black;
+    font-size: large;
+}
+ion-card{
+    max-height: 300px;
+    max-width: 100%;
+}
+ion-buttons{
+    width: 20% !important;
+}
+img{
+    height: 160px;
+    width: 100%;
+}
+ion-back-button{
+    color: white;
+}

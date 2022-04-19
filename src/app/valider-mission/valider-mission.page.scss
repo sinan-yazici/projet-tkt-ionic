@@ -1,0 +1,33 @@
+.border{
+    border: 1px solid #FE9C3F;
+     border-radius: 50%;
+     padding: 5px;
+     font-size: 15px;
+     font-weight: bold;
+     color: #FE9C3F;
+     margin: 3px;
+     cursor: pointer;
+}
+.border:hover{
+     transform: scale(1.05);
+}
+.global-btn-alerte{
+    display: flex;
+    justify-content: space-between;
+}
+.Gravite-alerte{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.modifier-suppr-alerte{
+    align-items: center;    
+    justify-content: center;
+    display: flex;
+}
+ion-title{
+    background-color: #6F392D;
+    font-weight: 400;
+    font-size: 20px;
+    color: white;
+}

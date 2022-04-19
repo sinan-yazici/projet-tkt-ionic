@@ -1,0 +1,7 @@
+{
+  "name": "tkt-project",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

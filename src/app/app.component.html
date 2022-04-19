@@ -1,0 +1,56 @@
+<ion-app>
+  <ion-menu side="start" menuId="main-menu" content-id="main">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <img src= "/assets/icon/logo.svg"/>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item routerLink="/home">
+            <ion-icon name="home" class="logo"></ion-icon>Accueil
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle *ngIf=" droit == '1'">
+          <ion-item routerLink="/ajout-utilisateur">
+            <ion-icon name="add-circle-outline" class="logo"></ion-icon>Ajout d'un utilisateur
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item routerLink="/affichage-espece" *ngIf=" droit == '2'">
+            <ion-icon name="paw-outline" class="logo"></ion-icon>Afficher les especes
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle *ngIf=" droit == '2'">
+          <ion-item routerLink="/valider-mission">
+            <ion-icon name="newspaper-outline" class="logo"></ion-icon>Afficher les missions
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item routerLink="/alerte">
+            <ion-icon name="alert-circle-outline" class="logo"></ion-icon>Afficher les alertes
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle *ngIf=" droit == '2'">
+          <ion-item routerLink="/encyclopedie">
+            <ion-icon name="bug-outline" class="logo"></ion-icon>Encyclopedie
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle *ngIf=" droit == '1'">
+          <ion-item routerLink="/mission-admin">
+            <ion-icon name="calendar-outline" class="logo"></ion-icon>Gerer les missions
+          </ion-item>
+        </ion-menu-toggle>
+<ion-button expand="block" color="danger" (click)="disconnect()">
+
+    <ion-icon color="light" name="alert-circle-outline" class="logo"></ion-icon>Se deconnecter
+</ion-button>
+          
+
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

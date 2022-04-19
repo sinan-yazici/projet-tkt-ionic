@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="left-right-alerte">
+    <ion-icon (click)="CloseModals()" name="chevron-back-outline"></ion-icon>
+
+    <ion-title>Ajouter une alerte</ion-title>
+  </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-content [fullscreen]="true">
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="alerte.libelle" placeholder="Titre de l'alerte"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="alerte.description" placeholder="Description"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="alerte.localisation" placeholder="localisation"></ion-input>
+    </ion-item>
+    <ion-select [(ngModel)]="alerte.gravite" placeholder="gravite">
+      <ion-select-option value="1">Faible</ion-select-option>
+      <ion-select-option value="2">Moyen</ion-select-option>
+      <ion-select-option value="3">Grave</ion-select-option>
+      <ion-select-option value="4">Très grave</ion-select-option>
+    </ion-select>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="alerte.id_user" placeholder="user"></ion-input>
+    </ion-item>
+    <ion-button (click)="submit()">Ajouter</ion-button>
+</ion-content>

@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+    <ion-menu-button menu="main-menu"></ion-menu-button>
+  </ion-buttons>
+    <ion-title>Les missions</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- Si il ny a pas de mission on informe l'utilisateur et on lui propose d'en ajouter une -->
+  <ion-card *ngIf="missions.length == 0">
+    <ion-card-header>
+      <ion-card-title>Il n'y a pas encore de mission...</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button expand="block">
+        <ion-icon name="add-outline"></ion-icon>
+        Ajouter une mission
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Affichage de toutes les missions -->
+  <ion-card *ngFor="let mission of missions">
+    <ion-card-header>
+      <ion-card-title *ngIf="mission.valider == 0">
+        🔴 {{mission.libelle_mission}}
+     </ion-card-title>
+     <ion-card-title *ngIf="mission.valider == 1">
+        🟢 {{mission.libelle_mission}} 
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Affectée à : <strong>{{mission.nom_user}} {{mission.prenom_user}}</strong></p>
+      <p>Pour le : <strong>{{mission.date | date:'EEEE d MMMM y':'':'fr-FR' }} 
+        à {{mission.date | date:'HH':'':'fr-FR' }}h{{mission.date | date:'mm':'':'fr-FR' }}</strong></p>
+      <p>Commentaire : <strong>{{mission.commentaire}}</strong></p>
+      <p *ngIf="mission.id_animal != null">Annimal : <strong>{{mission.prenom_animal}}</strong></p>
+      <p *ngIf="mission.id_enclos != null">lieu : <strong>{{mission.libelle}} ({{mission.emplacement}})</strong></p>
+      <!-- effectué ou non, animal ou enclos -->
+      <ion-button (click)="modifier(mission)" fill="outline">Modifier
+        <ion-icon slot="end" name="create-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="showAlert(mission)" fill="outline" color="danger">Supprimer
+        <ion-icon slot="end" name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="modifier(null)">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

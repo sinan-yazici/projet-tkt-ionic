@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Affichage des animaux</ion-title>
+    <ion-back-button text="" defaultHref="affichage-espece" slot="end"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+      
+<ion-content>
+  <ion-card *ngFor="let animal of animals" (click)="redirectetat(animal.id)">
+    <img src= "{{ animal.image }}"/>
+    <ion-card-content>
+      <ion-card-subtitle>{{ animal.id }}</ion-card-subtitle>
+      <p>sexe de l'animal : {{ animal.sexe }}</p>
+      <p>prenom : {{ animal.prenom }}</p>
+    </ion-card-content>
+ 
+  </ion-card>
+</ion-content>

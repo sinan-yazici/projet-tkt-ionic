@@ -1,0 +1,15 @@
+<ion-content>
+  <div class="logo">
+    <img src="https://www.cerza.com/wp-content/themes/marqueblanche/image/logo.svg">
+  </div>
+  <ion-item>
+    <ion-label>Nom d'utilisateur</ion-label>
+    <ion-input [(ngModel)]="user.login"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Mot de passe</ion-label>
+    <ion-input [(ngModel)]="user.password"></ion-input>
+  </ion-item>
+  <br>
+  <ion-button expand="block" shape="round" fill="outline" (click)="Connexion()">Se Connecter</ion-button>
+</ion-content>

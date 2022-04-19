@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>formulaire-valider-mission</ion-title>
+    <ion-icon (click)="closeModals()" name="chevron-back-outline"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-label>Valider la mission : </ion-label>
+
+  <ion-select
+  value="{{mission.valider}}"
+  (ionChange)="changeValueValider($event.detail.value)"
+>
+  <ion-select-option value="0">Non</ion-select-option>
+  <ion-select-option value="1">Oui</ion-select-option>
+
+</ion-select>
+<ion-item>
+      <ion-input
+        type="text"
+        [(ngModel)]="mission.commentaire"
+        placeholder="Commentaire"
+      ></ion-input>
+</ion-item>
+<ion-button (click)="submit()">Valider</ion-button>
+
+</ion-content>

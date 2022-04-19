@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar><ion-buttons slot="start">
+    <ion-menu-button menu="main-menu"></ion-menu-button>
+  </ion-buttons>
+    <ion-title>Affichage des especes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let espece of especes" (click)="redirectetat(espece.id)">
+    <img src= "{{ espece.image }}"/>
+    <ion-card-content>
+      <ion-card-subtitle>{{ espece.libelle }}</ion-card-subtitle>
+      <p>{{ espece.description }}</p>
+    </ion-card-content>
+ 
+  </ion-card>
+</ion-content>

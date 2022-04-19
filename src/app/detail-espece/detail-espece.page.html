@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="close()"> 
+        <ion-icon name="arrow-back-outline"></ion-icon> 
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{espece.libelle}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img src="{{espece.image}}"/>
+    <ion-card-header>
+      <ion-card-title>{{espece.libelle}}
+        <ion-chip outline color="warning">
+          <ion-icon name="earth-outline"></ion-icon>
+          <ion-label>{{pays.libelle}}</ion-label>
+        </ion-chip>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>{{espece.description}}
+    </ion-card-content>
+
+    <ion-list>
+      <ion-list-header> Quelques caractéristiques </ion-list-header>
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="https://www.cerza.com/wp-content/themes/marqueblanche/image/round-height.svg" />
+        </ion-avatar>
+        <ion-label>
+          <h2>{{infos.taille}}</h2>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-avatar slot="start">
+          <img *ngIf="infos.nourriture == 'Carnivore'" src="https://www.cerza.com/wp-content/themes/marqueblanche/image/carnivore-64.svg" />
+          <img *ngIf="infos.nourriture == 'Fruits, graines'" src="https://www.cerza.com/wp-content/themes/marqueblanche/image/frugivore-granivore-64.svg" />
+          <img *ngIf="infos.nourriture == 'Herbivore'" src="https://www.cerza.com/wp-content/themes/marqueblanche/image/round-herbivore.svg" />
+          <img *ngIf="infos.nourriture == 'Omnivore'" src="https://www.cerza.com/wp-content/themes/marqueblanche/image/omnivore-64.svg" />
+          <img *ngIf="infos.nourriture == 'Carnivore, piscivore'" src="https://www.cerza.com/wp-content/themes/marqueblanche/image/carnivore-piscivore-64.svg" />
+          <img *ngIf="infos.nourriture == 'Fruits, herbe et insectes'" src="https://www.cerza.com/wp-content/themes/marqueblanche/image/herbivore-insectivore-64.svg" />
+          <img *ngIf="infos.nourriture == 'Feuilles de bambou'" src="https://www.cerza.com/wp-content/themes/marqueblanche/image/bambou-64.svg" />
+          <img *ngIf="infos.nourriture == 'Herbe et petits animaux'" src="https://www.cerza.com/wp-content/themes/marqueblanche/image/herbivore-petits-mamiferes-64.svg" />
+        </ion-avatar>
+        <ion-label>
+          <h2>{{infos.nourriture}}</h2>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="https://www.cerza.com/wp-content/themes/marqueblanche/image/round-gestation.svg" />
+        </ion-avatar>
+        <ion-label>
+          <h2>{{infos.gestation}}</h2>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="https://www.cerza.com/wp-content/themes/marqueblanche/image/round-weight.svg" />
+        </ion-avatar>
+        <ion-label>
+          <h2>{{infos.poids}}</h2>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>
